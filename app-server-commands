@@ -9,10 +9,14 @@
 
 #!/bin/bash
 sudo -su ec2-user
-sudo wget https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm
+Use MariaDB instead (fully supported and MySQL-compatible)
+sudo dnf install -y mariadb105-server
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
+**//sudo wget https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm
 sudo dnf install mysql80-community-release-el9-1.noarch.rpm -y
 sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023
-sudo dnf install mysql-community-client -y
+sudo dnf install mysql-community-client -y//**
 mysql --version
 to execute: ./mysql(filename)
 
